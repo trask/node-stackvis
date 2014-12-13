@@ -55,8 +55,6 @@ var svContext = {
 	}
 };
 
-window.onload = svInit;
-
 function svInit()
 {
 	svTooltipBox = d3.select('#svTooltip');
@@ -309,7 +307,7 @@ function FlameGraph(node, rawdata, pwidth, pheight, context, options)
 	    attr('dx', svTextPaddingLeft).
 	    attr('dy', svTextPaddingTop).
 	    attr('clip-path', function (d) {
-		return ('url("#' + nodeid(d) + '")');
+		return ('url("' + location.href + '#' + nodeid(d) + '")');
 	    }).
 	    on('click', this.detailOpen.bind(this)).
 	    on('mouseover', this.mouseover.bind(this)).
